@@ -20,15 +20,16 @@ private struct Provider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         // 调试用
-//        let currentDate = Date()
-//        var entries: [SimpleEntry] = []
-//        for offset in 0..<10 {
-//            let entryDate = Calendar.current.date(byAdding: .second, value: offset, to: currentDate)!
-//            let entry = SimpleEntry(date: entryDate, data: CYWidgetDataLoader.getWidgetData(.clock))
-//            entries.append(entry)
-//        }
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
+        /*
+        let currentDate = Date()
+        var entries: [SimpleEntry] = []
+        for offset in 0..<10 {
+            let entryDate = Calendar.current.date(byAdding: .second, value: offset, to: currentDate)!
+            let entry = SimpleEntry(date: entryDate, data: CYWidgetDataLoader.getWidgetData(.clock))
+            entries.append(entry)
+        }
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        completion(timeline)*/
         // 最多五分钟刷新一次
         let currentDate = Date()
         var entries: [SimpleEntry] = []
@@ -105,8 +106,15 @@ private struct CYWidgetCalendarView: View {
                 .frame(width: 2, height: RatioLen(20), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: -10)
                 .rotationEffect(.init(degrees: Double(hour)))
+            // link 只支持 systemMedium systemLarge
+            /*
+            Link(destination: URL(string: "https://www.baidu.com/")!, label: {
+                    /*@START_MENU_TOKEN@*/Text("Link")/*@END_MENU_TOKEN@*/
+                })*/
 
-        }
+        } // widgetURL 支持全尺寸 推荐
+        .widgetURL(URL(string: "https://www.baidu.com/clock"))
+
     }
 }
 

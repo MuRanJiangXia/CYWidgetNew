@@ -44,18 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let str = url.absoluteString
-        // 模拟 widget交互
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            /*
-            if str.lowercased().hasSuffix(CYIcontype.art.rawValue.lowercased()) {
-                ViewController.changeAppIcon(CYIcontype.art.rawValue)
-                
-            } else {
-                ViewController.changeAppIcon(CYIcontype.icon.rawValue)
-            }*/
-        }
-        
+        // 点击交互
         print("url.absoluteString:\(url.absoluteString)")
         return true
     }

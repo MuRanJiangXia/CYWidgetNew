@@ -25,12 +25,6 @@ private struct Provider: TimelineProvider {
         let timeLine = Timeline(entries: [entry], policy: .atEnd)
         completion(timeLine)
         
-//        let midnight = Calendar.current.startOfDay(for: Date())
-//        let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
-//        let entries = [SimpleEntry(date: midnight, data: CYWidgetDataLoader.getWidgetData(.calendar))]
-//        let timeline = Timeline(entries: entries, policy: .after(nextMidnight))
-//        completion(timeline)
-        
     }
 }
 
@@ -70,6 +64,7 @@ private struct CYWidgetCalendarView: View {
             }
             .frame(width: RatioLen(329), height: RatioLen(155), alignment: .leading)
         }
+        .widgetURL(URL(string: "https://www.baidu.com/calendar"))
     }
     
 }
