@@ -86,11 +86,12 @@ private struct CYWidgetCalendarView: View {
             }
             
             // sec
-//            Rectangle()
-//                .fill(Color.red)
-//                .frame(width: 2, height: RatioLen(40), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                .offset(y: -10)
-//                .rotationEffect(.init(degrees: Double(entry.clockTime().sec*6)))
+            /*
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 2, height: RatioLen(40), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .offset(y: -10)
+                .rotationEffect(.init(degrees: Double(entry.clockTime().sec*6)))*/
 
             // min
             Rectangle()
